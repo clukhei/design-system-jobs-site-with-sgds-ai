@@ -30,16 +30,16 @@ export default function PostJobPage() {
         </sgds-mainnav>
 
         <div className="sgds:flex sgds:flex-col sgds:w-full">
-          <div className="sgds-container" style={{ paddingTop: '4rem', paddingBottom: '4rem', textAlign: 'center' }}>
-            <div style={{ maxWidth: '480px', margin: '0 auto' }}>
-              <sgds-icon name="check-circle" size="3-xl" suppressHydrationWarning style={{ color: '#1a7a4a', marginBottom: '1.5rem', display: 'block' }}></sgds-icon>
-              <h1 className="sgds:text-2xl sgds:font-semibold sgds:text-color-default" style={{ marginBottom: '0.75rem' }}>
+          <div className="sgds-container sgds:py-layout-lg sgds:text-center">
+            <div className="sgds:max-w-container-md sgds:mx-auto">
+              <sgds-icon name="check-circle" size="3-xl" className="sgds:text-success-default sgds:mb-6 sgds:block" suppressHydrationWarning></sgds-icon>
+              <h1 className="sgds:text-2xl sgds:font-semibold sgds:text-color-default sgds:mb-3">
                 Job listing submitted!
               </h1>
-              <p className="sgds:text-base sgds:text-color-muted" style={{ marginBottom: '2rem' }}>
+              <p className="sgds:text-base sgds:text-color-muted sgds:mb-8">
                 Thank you for posting on DesignJobs SG. Your listing will be reviewed and published within 1 business day.
               </p>
-              <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <div className="sgds:flex sgds:gap-component-xs sgds:justify-center sgds:flex-wrap">
                 <sgds-button variant="primary" suppressHydrationWarning onClick={() => setSubmitted(false)}>
                   Post another job
                 </sgds-button>
@@ -69,25 +69,25 @@ export default function PostJobPage() {
       </sgds-mainnav>
 
       <div className="sgds:flex sgds:flex-col sgds:w-full">
-        <div className="sgds-container" style={{ paddingTop: '2rem', paddingBottom: '3rem' }}>
+        <div className="sgds-container sgds:pt-layout-sm sgds:pb-layout-md">
 
           {/* Breadcrumb */}
-          <nav style={{ marginBottom: '1.5rem' }}>
+          <nav className="sgds:mb-6">
             <sgds-breadcrumb suppressHydrationWarning>
-              <sgds-breadcrumb-item href="/" suppressHydrationWarning>Browse Jobs</sgds-breadcrumb-item>
-              <sgds-breadcrumb-item suppressHydrationWarning>Post a Job</sgds-breadcrumb-item>
+              <sgds-breadcrumb-item suppressHydrationWarning><a href="/">Browse Jobs</a></sgds-breadcrumb-item>
+              <sgds-breadcrumb-item suppressHydrationWarning><a href="/post-job">Post a Job</a></sgds-breadcrumb-item>
             </sgds-breadcrumb>
           </nav>
 
           {/* Page header */}
-          <div className="sgds:flex sgds:items-start sgds:justify-between" style={{ marginBottom: '1.5rem' }}>
+          <div className="sgds:flex sgds:items-start sgds:justify-between sgds:mb-6">
             <div>
               <h1 className="sgds:text-2xl sgds:font-semibold sgds:text-color-default">Post a Job</h1>
-              <p className="sgds:text-sm sgds:text-color-muted" style={{ marginTop: '0.25rem' }}>
+              <p className="sgds:text-sm sgds:text-color-muted sgds:mt-1">
                 Fill in the details below to list your role on DesignJobs SG.
               </p>
             </div>
-            <div className="sgds:flex sgds:gap-component-sm sgds:shrink-0" style={{ marginLeft: '1rem' }}>
+            <div className="sgds:flex sgds:gap-component-sm sgds:shrink-0 sgds:ml-4">
               <Link href="/">
                 <sgds-button variant="outline" suppressHydrationWarning>Cancel</sgds-button>
               </Link>
@@ -100,11 +100,12 @@ export default function PostJobPage() {
           <form id="post-job-form" ref={formRef} onSubmit={handleSubmit} noValidate>
 
             {/* Section 1: Company Information */}
-            <div className="sgds:border-t sgds:border-muted" style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
+            <sgds-divider suppressHydrationWarning></sgds-divider>
+            <div className="sgds:py-layout-sm">
               <div className="sgds-grid sgds:gap-layout-md">
                 <div className="sgds-col-4 sgds-col-sm-8 sgds-col-lg-4">
                   <h2 className="sgds:text-base sgds:font-semibold sgds:text-color-default">Company Information</h2>
-                  <p className="sgds:text-sm sgds:text-color-muted" style={{ marginTop: '0.375rem' }}>
+                  <p className="sgds:text-sm sgds:text-color-muted sgds:mt-2">
                     Tell candidates about your organisation.
                   </p>
                 </div>
@@ -155,11 +156,12 @@ export default function PostJobPage() {
             </div>
 
             {/* Section 2: Job Details */}
-            <div className="sgds:border-t sgds:border-muted" style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
+            <sgds-divider suppressHydrationWarning></sgds-divider>
+            <div className="sgds:py-layout-sm">
               <div className="sgds-grid sgds:gap-layout-md">
                 <div className="sgds-col-4 sgds-col-sm-8 sgds-col-lg-4">
                   <h2 className="sgds:text-base sgds:font-semibold sgds:text-color-default">Job Details</h2>
-                  <p className="sgds:text-sm sgds:text-color-muted" style={{ marginTop: '0.375rem' }}>
+                  <p className="sgds:text-sm sgds:text-color-muted sgds:mt-2">
                     Describe the role, type, and compensation.
                   </p>
                 </div>
@@ -240,11 +242,12 @@ export default function PostJobPage() {
             </div>
 
             {/* Section 3: Requirements */}
-            <div className="sgds:border-t sgds:border-muted" style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
+            <sgds-divider suppressHydrationWarning></sgds-divider>
+            <div className="sgds:py-layout-sm">
               <div className="sgds-grid sgds:gap-layout-md">
                 <div className="sgds-col-4 sgds-col-sm-8 sgds-col-lg-4">
                   <h2 className="sgds:text-base sgds:font-semibold sgds:text-color-default">Requirements</h2>
-                  <p className="sgds:text-sm sgds:text-color-muted" style={{ marginTop: '0.375rem' }}>
+                  <p className="sgds:text-sm sgds:text-color-muted sgds:mt-2">
                     List the skills, qualifications, and experience you're looking for.
                   </p>
                 </div>
@@ -277,11 +280,12 @@ export default function PostJobPage() {
             </div>
 
             {/* Section 4: Contact Information */}
-            <div className="sgds:border-t sgds:border-muted" style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
+            <sgds-divider suppressHydrationWarning></sgds-divider>
+            <div className="sgds:py-layout-sm">
               <div className="sgds-grid sgds:gap-layout-md">
                 <div className="sgds-col-4 sgds-col-sm-8 sgds-col-lg-4">
                   <h2 className="sgds:text-base sgds:font-semibold sgds:text-color-default">Contact Information</h2>
-                  <p className="sgds:text-sm sgds:text-color-muted" style={{ marginTop: '0.375rem' }}>
+                  <p className="sgds:text-sm sgds:text-color-muted sgds:mt-2">
                     How should candidates reach out? This will be shown on the listing.
                   </p>
                 </div>
@@ -322,7 +326,8 @@ export default function PostJobPage() {
             </div>
 
             {/* Form footer */}
-            <div className="sgds:border-t sgds:border-muted sgds:flex sgds:justify-end sgds:gap-component-sm" style={{ paddingTop: '1.5rem' }}>
+            <sgds-divider suppressHydrationWarning></sgds-divider>
+            <div className="sgds:flex sgds:justify-end sgds:gap-component-sm sgds:pt-layout-sm">
               <Link href="/">
                 <sgds-button variant="outline" type="button" suppressHydrationWarning>Cancel</sgds-button>
               </Link>
