@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "skills": {
+    "sgds-components": {
+      "source": "govtechsg/sgds-web-component",
+      "sourceType": "github",
+      "computedHash": "3b7377c8396d21c12c5bd869b940d3c49f80ddb054e0b1a2bba02730f91c4bc6"
+    },
+    "sgds-data-visualisation": {
+      "source": "govtechsg/sgds-web-component",
+      "sourceType": "github",
+      "computedHash": "c57b327ba1f534ea0f339fb76c4aef64c3778dd697e9e79ecffc74ae6a83e1da"
+    },
+    "sgds-forms": {
+      "source": "govtechsg/sgds-web-component",
+      "sourceType": "github",
+      "computedHash": "9ff079a2afb91ecc35e6812842589500848a9826246a4d0a0d2b297141e8c870"
+    },
+    "sgds-getting-started": {
+      "source": "govtechsg/sgds-web-component",
+      "sourceType": "github",
+      "computedHash": "60a1df79c5833873b4f42f11e9a7eb4d76a6c00ad9f46003bfaa80d049357c27"
+    },
+    "sgds-pattern-block-templates": {
+      "source": "govtechsg/sgds-web-component",
+      "sourceType": "github",
+      "computedHash": "51ea8cdc4e2aa8efb969252cb94a7a2d7860e1b2fb4ba728cf7d7a870bab44a3"
+    },
+    "sgds-pattern-page-templates": {
+      "source": "govtechsg/sgds-web-component",
+      "sourceType": "github",
+      "computedHash": "bd0685aceedac4079779d3b0abd335489019864923e21b308e06e48a7e83ceec"
+    },
+    "sgds-theming": {
+      "source": "govtechsg/sgds-web-component",
+      "sourceType": "github",
+      "computedHash": "7aa17ed36458d67d90e1c673c2745a53627bc1473b3241c6af4e2826ead51463"
+    },
+    "sgds-utilities": {
+      "source": "govtechsg/sgds-web-component",
+      "sourceType": "github",
+      "computedHash": "375eeef3621d2ddb62cef84f64bc74a4083556930ac4f2054b272db8c4b3e4a1"
+    },
+    "sgds-workflow": {
+      "source": "govtechsg/sgds-web-component",
+      "sourceType": "github",
+      "computedHash": "e3af43067667ec49bf48dd4f62f363641475a473032b52bef521a9ca37f973d4"
+    }
+  }
+}
