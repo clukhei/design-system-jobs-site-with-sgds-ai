@@ -17,6 +17,7 @@ export default function JobsPage() {
   const typeRef = useRef<HTMLElement>(null);
   const industryRef = useRef<HTMLElement>(null);
   const locationRef = useRef<HTMLElement>(null);
+  const paginationRef = useRef<HTMLElement>(null);
 
   // Wire up SGDS custom events via addEventListener (required for Next.js)
   useEffect(() => {
@@ -61,6 +62,16 @@ export default function JobsPage() {
     };
     el.addEventListener('sgds-change', handler);
     return () => el.removeEventListener('sgds-change', handler);
+  }, []);
+
+  useEffect(() => {
+    const el = paginationRef.current;
+    if (!el) return;
+    const handler = (e: Event) => {
+      setCurrentPage((e as CustomEvent).detail.currentPage);
+    };
+    el.addEventListener('sgds-page-change', handler);
+    return () => el.removeEventListener('sgds-page-change', handler);
   }, []);
 
   const filtered = useMemo(() => {
@@ -227,31 +238,14 @@ export default function JobsPage() {
 
               {/* Pagination */}
               {totalPages > 1 && (
-                <div className="sgds:flex sgds:items-center sgds:justify-between">
-                  <p className="sgds:text-sm sgds:text-color-muted">
-                    Page {currentPage} of {totalPages}
-                  </p>
-                  <div className="sgds:flex sgds:gap-2">
-                    <sgds-button
-                      suppressHydrationWarning
-                      variant="outline"
-                      size="sm"
-                      disabled={currentPage === 1}
-                      onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                    >
-                      Previous
-                    </sgds-button>
-                    <sgds-button
-                      suppressHydrationWarning
-                      variant="outline"
-                      size="sm"
-                      disabled={currentPage === totalPages}
-                      onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                    >
-                      Next
-                    </sgds-button>
-                  </div>
-                </div>
+                <sgds-pagination
+                  ref={paginationRef}
+                  suppressHydrationWarning
+                  dataLength={filtered.length}
+                  itemsPerPage={ITEMS_PER_PAGE}
+                  currentPage={currentPage}
+                  variant="number"
+                ></sgds-pagination>
               )}
             </>
           ) : (
