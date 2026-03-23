@@ -6,3 +6,14 @@
 
 /* 3. Utility classes (sgds: prefix) — processed by Tailwind */
 @import "@govtechsg/sgds-web-component/css/utility.css";
+
+/* Restore breakpoints to raw pixel values so Tailwind v4 can generate valid @media queries.
+   utility.css overrides these with var() references which PostCSS cannot resolve. */
+@theme {
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 512px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2-xl: 1440px;
+}
